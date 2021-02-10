@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CharacterList from '../characters/CharacterList';
 import { findCharacters } from '../services/avatarApi';
+import Header from '../Header';
 
 export default class AllCharacters extends Component {
   state = {
@@ -22,6 +23,6 @@ export default class AllCharacters extends Component {
 
     if(loading) return <img src={gif} alt="Loading" />;
 
-    return <CharacterList characters={characters} />;
+    return <Header /> && <CharacterList characters={characters} />;
   }
 }

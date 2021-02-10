@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import CharacterList from '../characters/CharacterList';
 import { findByCharacter } from '../services/avatarApi';
+import Header from '../Header';
 
 export default class CharacterDetail extends Component {
   static propTypes = {
@@ -28,6 +29,6 @@ export default class CharacterDetail extends Component {
     const gif = 'https://giphy.com/gifs/mashable-3oEjI6SIIHBdRxXI40';
 
     if(loading) return <img src={gif} alt="Loading" />;
-    return <CharacterList character={character} />;
+    return <Header /> && <CharacterList character={character} />;
   }
 }
