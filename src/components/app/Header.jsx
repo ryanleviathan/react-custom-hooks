@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-// import history from '../app/history';
+import history from '../app/history';
 
 export default class Header extends Component {
   render() {
     return (
       <header>
-        {/* <Link to={`${history.goBack()}`}>
+        <Link to={history.goBack()}>
           <button>back</button>
         </Link>
-        <Link to={`${history.goForward()}`}>
+        <Link to={history.goForward()}>
           <button>forward</button>
-        </Link> */}
+        </Link>
         <Link to={'/'}>
           <button>home</button>
         </Link>
