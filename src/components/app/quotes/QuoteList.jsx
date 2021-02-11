@@ -1,0 +1,30 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import Quote from './Quote';
+import Header from '../Header';
+
+const QuoteList = ({ quotes }) => {
+  const quoteElements = quotes.map((quote) => (
+    <li key={quote.text}>
+      <Quote
+        image={quote.image}
+        character={quote.character}
+        text={quote.text}
+      />
+    </li>
+  ));
+
+  return <Header /> && <ul data-testid="quotes">{quoteElements}</ul>;
+};
+
+QuoteList.PropTypes = {
+  quotes: PropTypes.arrayOf(
+    PropTypes.shape({
+      image: PropTypes.string.isRequired,
+      character: PropTypes.string.isRequired,
+      text: PropTypes.string.isRequired
+    })
+  ).isRequired,
+};
+
+export default QuoteList;
