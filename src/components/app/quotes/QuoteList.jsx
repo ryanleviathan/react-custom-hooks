@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Quote from './Quote';
+import Header from '../Header';
 
 const QuoteList = ({ quotes }) => {
   const quoteElements = quotes.map((quote) => (
@@ -13,7 +14,7 @@ const QuoteList = ({ quotes }) => {
     </li>
   ));
 
-  return <ul data-testid="quotes">{quoteElements}</ul>;
+  return <Header /> && <ul data-testid="quotes">{quoteElements}</ul>;
 };
 
 QuoteList.PropTypes = {
