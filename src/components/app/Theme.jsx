@@ -13,7 +13,7 @@ const themes = {
 
 const ThemeContext = React.createContext(themes.light);
 
-function Toolbar(props) {
+function Toolbar() {
   return (
     <div>
       <ThemedButton />
