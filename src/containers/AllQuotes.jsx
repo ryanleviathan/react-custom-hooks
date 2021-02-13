@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import QuoteList from '../components/app/quotes/QuoteList';
 import { findQuotes } from '../services/futuramaApi';
+import {  }
 
 const AllQuotes = () => {
   const [loading, setLoading] = useState(true);
