@@ -11,7 +11,7 @@ describe('AllQuotes container', () => {
       </MemoryRouter>
     );
 
-    screen.getByAltText('Loading');
+    screen.getByText('Loading');
 
     const ul = await screen.findByTestId('quotes');
 

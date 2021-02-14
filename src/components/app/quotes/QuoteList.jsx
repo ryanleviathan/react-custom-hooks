@@ -6,13 +6,10 @@ import Header from '../Header';
 const QuoteList = ({ quotes }) => {
   const quoteElements = quotes.map((quote) => (
     <li key={quote.text}>
-      <Quote
-        image={quote.image}
-        character={quote.character}
-        text={quote.text}
-      />
+      <Quote {...quotes} />
     </li>
   ));
+  
 
   return <Header /> && <ul data-testid="quotes">{quoteElements}</ul>;
 };
