@@ -6,7 +6,7 @@ const AllQuotes = () => {
   const { loading, quotes } = useQuotes();
 
   if(loading) return <a>Loading</a>;
-  return <QuoteList {...quotes} />;
+  return <QuoteList quotes={quotes} />;
 };
 
 export default AllQuotes;
