@@ -6,7 +6,7 @@ import Header from '../Header';
 const QuoteList = ({ quotes }) => {
   const quoteElements = quotes.map((quote) => (
     <li key={quote.text}>
-      <Quote {...quotes} />
+      <Quote {...quote} />
     </li>
   ));
   
