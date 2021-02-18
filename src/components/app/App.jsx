@@ -14,7 +14,7 @@ export default function App() {
       <Header />
       <Switch>
         <Route exact path="/" component={AllQuotes} />       
-        <Route exact path="/:character" component={ByCharacterQuotes} />
+        <Route exact path="/quotes/:character" component={ByCharacterQuotes} />
       </Switch>
     </Router>
   );
