@@ -5,7 +5,7 @@ import styles from './Quote.css';
 
 const Quote = ({ image, character, text }) => (
   <figure className={styles.Quote}>
-    <Link to={`${character}`}>
+    <Link to={`/quotes/${character}`}>
       <img src={image} alt={character} />
     </Link>
     <figcaption>

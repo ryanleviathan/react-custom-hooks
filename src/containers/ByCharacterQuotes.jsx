@@ -7,7 +7,7 @@ const ByCharacterQuotes = ({ match }) => {
   const { loading, quotes } = useQuotesByCharacter(match.params.character);
   
   if(loading) return <a>Loading</a>;
-  return <QuoteList {...quotes} />;
+  return <QuoteList quotes={quotes} />;
 };
 
 ByCharacterQuotes.propTypes = {
