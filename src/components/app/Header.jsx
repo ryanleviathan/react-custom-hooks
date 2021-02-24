@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import ThemeContext from '../ThemeContext';
-import ThemeSwitcher from "./ThemeSwitcher"
+import ThemeSwitcher from '../ThemeSwitcher';
 
 const Header = () => {
   const { theme } = useContext(ThemeContext);
@@ -12,6 +12,7 @@ const Header = () => {
         <Link to={'/'}>
           <button>home</button>
         </Link>
+        <ThemeSwitcher />
         <h1>Futurama Characters!</h1>
       </header>
     </>
