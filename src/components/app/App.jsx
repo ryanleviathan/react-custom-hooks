@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { ThemeProvider } from 'styled-components';
-import { lightTheme, darkTheme } from '../theme';
+import ThemeContext from '../ThemeContext';
 import { GlobalStyles } from '../global';
 import AllQuotes from '../../containers/AllQuotes';
 import ByCharacterQuotes from '../../containers/ByCharacterQuotes';
@@ -9,6 +8,8 @@ import Header from './Header';
 
 export default function App() {
   const [theme, setTheme] = useState('light');
+  const value = { theme, setTheme };
+
   const toggleTheme = () => {
     if(theme === 'light') {
       setTheme('dark');
@@ -18,7 +19,7 @@ export default function App() {
   };
 
   return (
-    <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+    <ThemeContext.Provider value={value}>
       <Router>
         <GlobalStyles />
         <Header />
@@ -29,6 +30,6 @@ export default function App() {
             component={ByCharacterQuotes} />
         </Switch>
       </Router>
-    </ThemeProvider>
+    </ThemeContext.Provider>
   );
 }

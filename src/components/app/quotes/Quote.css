@@ -19,3 +19,13 @@
     }
   }
 }
+
+.dark {
+  background-color: #404042;
+  color: rgb(255, 244, 244);
+}
+
+.light {
+  background-color: #ebebf7;
+  color: rgb(32, 28, 28);
+}

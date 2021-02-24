@@ -1,17 +1,26 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import Quote from './Quote';
 import Header from '../Header';
+import ThemeContext from '../../ThemeContext';
 
 const QuoteList = ({ quotes }) => {
+  const { theme } = useContext(ThemeContext);
+  const bg =
+    theme == 'dark'
+      ? 'body {background-color: #404042; color: gray;}'
+      : 'body {background-color: #fff; color: #000;}';
+
   const quoteElements = quotes.map((quote) => (
     <li key={quote.text}>
-      <Quote {...quote} />
+      <style>{bg}</style>
+      <Quote className={theme} {...quote} />
     </li>
   ));
   
 
-  return <Header /> && <ul data-testid="quotes">{quoteElements}</ul>;
+  return <Header className={theme} /> 
+    && <ul data-testid="quotes">{quoteElements}</ul>;
 };
 
 QuoteList.propTypes = {
